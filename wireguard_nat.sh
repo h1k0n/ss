@@ -35,31 +35,31 @@ psk="$(pp wg genpsk)"
 
 configure_peers() {
 
-	ip1 addr add 192.168.241.1/24 dev wg1
-	ip1 addr add fd00::1/24 dev wg1
+    ip1 addr add 192.168.241.1/24 dev wg1
+    ip1 addr add fd00::1/24 dev wg1
 
-	ip2 addr add 192.168.241.2/24 dev wg2
-	ip2 addr add fd00::2/24 dev wg2
+    ip2 addr add 192.168.241.2/24 dev wg2
+    ip2 addr add fd00::2/24 dev wg2
 
-	n0 wg set wg1 \
-		private-key <(echo "$key1") \
-		listen-port 10000 \
-		peer "$pub2" \
-			preshared-key <(echo "$psk") \
-			allowed-ips 192.168.241.2/32,fd00::2/128
-	n0 wg set wg2 \
-		private-key <(echo "$key2") \
-		listen-port 20000 \
-		peer "$pub1" \
-			preshared-key <(echo "$psk") \
-			allowed-ips 192.168.241.1/32,fd00::1/128
+    n0 wg set wg1 \
+        private-key <(echo "$key1") \
+        listen-port 10000 \
+        peer "$pub2" \
+            preshared-key <(echo "$psk") \
+            allowed-ips 192.168.241.2/32,fd00::2/128
+    n0 wg set wg2 \
+        private-key <(echo "$key2") \
+        listen-port 20000 \
+        peer "$pub1" \
+            preshared-key <(echo "$psk") \
+            allowed-ips 192.168.241.1/32,fd00::1/128
 
-	n0 wg showconf wg1
-	n0 wg showconf wg2
+    n0 wg showconf wg1
+    n0 wg showconf wg2
 
-	ip1 link set up dev wg1
-	ip2 link set up dev wg2
-	sleep 1
+    ip1 link set up dev wg1
+    ip2 link set up dev wg2
+    sleep 1
 }
 configure_peers
 

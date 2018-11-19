@@ -44,17 +44,17 @@ psk="$(pp wg genpsk)"
 [[ -n $key1 && -n $key2 && -n $psk ]]
 
 n0 wg set wg1 \
-	private-key <(echo "$key1") \
-	listen-port 10000 \
-	peer "$pub2" \
-	preshared-key <(echo "$psk") \
-	allowed-ips 192.168.241.2/32,fd00::2/128
+    private-key <(echo "$key1") \
+    listen-port 10000 \
+    peer "$pub2" \
+    preshared-key <(echo "$psk") \
+    allowed-ips 192.168.241.2/32,fd00::2/128
 n0 wg set wg2 \
-	private-key <(echo "$key2") \
-	listen-port 20000 \
-	peer "$pub1" \
-	preshared-key <(echo "$psk") \
-	allowed-ips 192.168.241.1/32,fd00::1/128
+    private-key <(echo "$key2") \
+    listen-port 20000 \
+    peer "$pub1" \
+    preshared-key <(echo "$psk") \
+    allowed-ips 192.168.241.1/32,fd00::1/128
 
 n0 wg showconf wg1
 n0 wg showconf wg2
