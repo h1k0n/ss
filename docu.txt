@@ -1,0 +1,3 @@
+https://openvpn.net/community-resources/reference-manual-for-openvpn-2-4/
+–management-client
+Management interface will connect as a TCP/unix domain client to IP:port specified by –management rather than listen as a TCP server or on a unix domain socket.If the client connection fails to connect or is disconnected, a SIGTERM signal will be generated causing OpenVPN to quit.
