@@ -11,3 +11,5 @@ epoll和网络栈是什么关系？epoll是一种内核提供的IO多路复用�
 一切需要耗费太多意志力支撑的方法都不是好方法。
 
 在go的很多web框架中Route等价于标准库ServeMux(multiplexer)。
+
+ curl -XHELLO www.baidu.com -v 原来可以自定义HELLO方法,不仅是POST, GET等
