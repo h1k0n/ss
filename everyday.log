@@ -9,3 +9,5 @@ epoll和网络栈是什么关系？epoll是一种内核提供的IO多路复用�
 为什么go网络标准库用了epoll，但是evio性能更好呢？因为evio是单线程模型，没有goroutines上下文切换。
 
 一切需要耗费太多意志力支撑的方法都不是好方法。
+
+在go的很多web框架中Route等价于标准库ServeMux(multiplexer)。
