@@ -7,3 +7,11 @@ func NotFoundHandler() Handler
 func StripPrefix(prefix string, h Handler) Handler
 func RedirectHandler(url string, code int) Handler
 func TimeoutHandler(h Handler, dt time.Duration, msg string) Handler
+
+func test() (res int) {
+    tmp := 1
+    defer func() {
+        tmp++
+    }()
+    return tmp
+} //answer： 1
