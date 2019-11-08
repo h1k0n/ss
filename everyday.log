@@ -21,3 +21,5 @@ On the other hand, assigning untyped nil to an interface is always OK.
 
 do not return concrete interface type
 避免将一个有可能为nil的具体类型的值赋值给interface变量
+
+chi的middleware返回值func(next http.Handler) http.Handler,这个函数类型简直就是handler改装器。
