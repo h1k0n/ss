@@ -25,3 +25,5 @@ do not return concrete interface type
 chi的middleware返回值func(next http.Handler) http.Handler,这个函数类型简直就是handler改装器。
 
 defer、return、返回值三者的执行逻辑应该是：return最先执行，return负责将结果写入返回值中；接着defer开始执行一些收尾工作；最后函数携带当前返回值退出
+
+named return parameters can lead to subtle bugs, and generally should be avoided unless there's no alternative.
