@@ -31,3 +31,5 @@ named return parameters can lead to subtle bugs, and generally should be avoided
 defer的参数在声明时即被确定下来;defer注意有名与无名返回值;延时参数与有名返回值遮蔽
 
 The first line of the file specifies that you're using proto3 syntax: if you don't do this the protocol buffer compiler will assume you are using proto2.
+
+Length-prefix framing
