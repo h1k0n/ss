@@ -15,3 +15,9 @@ func test() (res int) {
     }()
     return tmp
 } //answer： 1
+
+https://github.com/shemminger/iproute2/blob/master/ip/iprule.c
+	while (argc > 0) {
+		if (matches(*argv, "preference") == 0 ||
+		    matches(*argv, "order") == 0 ||
+		    matches(*argv, "priority") == 0) {
