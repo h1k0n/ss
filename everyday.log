@@ -33,3 +33,4 @@ defer的参数在声明时即被确定下来;defer注意有名与无名返回值
 The first line of the file specifies that you're using proto3 syntax: if you don't do this the protocol buffer compiler will assume you are using proto2.
 
 Length-prefix framing
+在现行游戏规则下突破，只会遵守规则的能当好学生。
