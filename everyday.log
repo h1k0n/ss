@@ -41,3 +41,5 @@ io.ByteWriter  ReadByte()
 -- bytes.Reader
 
 echo -n -e "\x02\x45\x31\x38\x03\x34\x43\x0d\x0a" | socat - UDP4-DATAGRAM:127.0.0.1:6121
+
+r, err = nullAEAD.Open(data[0:int(r.Size())-r.Len()], r)
