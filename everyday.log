@@ -35,3 +35,7 @@ The first line of the file specifies that you're using proto3 syntax: if you don
 Length-prefix framing
 在现行游戏规则下突破，只会遵守规则的能当好学生。
 女人很可能会趋近统治阶级，维护统治阶级的规则。
+
+io.ByteWriter  ReadByte()
+-- bytes.Buffer
+-- bytes.Reader
