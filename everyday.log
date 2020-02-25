@@ -72,3 +72,5 @@ Major = major + minor
 Minor = minor + major
 Diminished = minor + minor
 Augmented = major + major
+
+eddie ate dynamite,good byte eddie
