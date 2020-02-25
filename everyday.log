@@ -43,3 +43,26 @@ io.ByteWriter  ReadByte()
 echo -n -e "\x02\x45\x31\x38\x03\x34\x43\x0d\x0a" | socat - UDP4-DATAGRAM:127.0.0.1:6121
 
 r, err = nullAEAD.Open(data[0:int(r.Size())-r.Len()], r)
+
+major chord = base + major 3rd + perfect fifth
+major 3rd = 2 whole steps from base
+perfect 5th = 3.5 steps from base (1.5 from major 3rd)
+
+minor chord = base + minor 3rd + perfect fifth
+minor 3rd = 1.5 whole steps from base
+perfect 5th = 3.5 steps from base (2 from major 3rd)
+
+perfect 5th = 3.5 steps from base (1.5 from major 3rd, 2 from minor 3rd)
+diminished 5th = 3 steps from base (1.5 from minor 3rd)
+augmented 5th = 4 steps from base (2 from major 3rd)
+
+all notes in chord must be 1.5-2 steps apart
+
+so chords
+0 1.5 1.5 (minor 3rd diminished 5th)
+0 1.5 2 (minor 3rd)
+0 2 1.5 (major 3rd)
+0 2 2 (major 3rd augmented 5th)
+
+more notes, same formula
+each note must be 1.5 or 2 steps up
