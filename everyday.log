@@ -66,3 +66,9 @@ so chords
 
 more notes, same formula
 each note must be 1.5 or 2 steps up
+
+
+Major = major + minor
+Minor = minor + major
+Diminished = minor + minor
+Augmented = major + major
