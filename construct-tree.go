@@ -61,6 +61,9 @@ func main() {
 	fmt.Println("Hello, playground", levelOrder(root))
 
 	printTreeHorizontal(root)
+	fmt.Println()
+	fmt.Println("Hello, playground", "------------")
+	printTree(root)
 }
 
 func constructTree(array []*int) *TreeNode {
@@ -263,5 +266,95 @@ func traverseNodes(sb *bytes.Buffer, padding string, pointer string, node *TreeN
 
 func printTreeHorizontal(root *TreeNode) {
 	print(traversePreOrder(root))
+}
+
+
+func printTree(root *TreeNode) {
+	maxLevel := getTreeDepth(root)
+	l := list.New()
+	l.PushBack(root)
+	printNodeInternal(l, 1, maxLevel)
+}
+
+func printNodeInternal(nodes *list.List, level int, maxLevel int) {
+	if nodes == nil || nodes.Len() == 0 || isAllElementsNull(nodes) {
+		return
+	}
+
+	floor := maxLevel - level
+	endgeLines := int(math.Pow(2, float64((max(floor-1, 0)))))
+	firstSpaces := int(math.Pow(2, float64(floor)) - 1)
+	betweenSpaces := int(math.Pow(2, float64((floor+1))) - 1)
+
+	printWhitespaces(firstSpaces)
+
+	newNodes := list.New()
+	for e := nodes.Front(); e != nil; e = e.Next() {
+		node, ok := e.Value.(*TreeNode)
+		if ok && node != nil {
+			print(node.Val)
+			newNodes.PushBack(node.Left)
+			newNodes.PushBack(node.Right)
+		} else {
+			newNodes.PushBack(nil)
+			newNodes.PushBack(nil)
+			print(" ")
+		}
+		printWhitespaces(betweenSpaces)
+	}
+
+	print("\n")
+
+	for i := 1; i <= endgeLines; i++ {
+		for e := nodes.Front(); e != nil; e = e.Next() {
+			//for j := 0; j < nodes.Len(); j++ {
+			node, ok := e.Value.(*TreeNode)
+			printWhitespaces(firstSpaces - i)
+			if !ok || node == nil{
+				printWhitespaces(endgeLines + endgeLines + i + 1)
+				continue
+			}
+			//printWhitespaces(firstSpaces - i)
+			//if node == nil {
+			//	printWhitespaces(endgeLines + endgeLines + i + 1)
+			//	continue
+			//}
+
+			if node.Left != nil {
+				print("/")
+			} else {
+				printWhitespaces(1)
+			}
+
+			printWhitespaces(i + i - 1)
+			if node.Right != nil {
+				print("\\")
+			} else {
+				printWhitespaces(1)
+			}
+			printWhitespaces(endgeLines + endgeLines - i)
+		}
+
+		print("\n")
+	}
+
+	printNodeInternal(newNodes, level+1, maxLevel)
+}
+
+func printWhitespaces(count int) {
+	for i := 0; i < count; i++ {
+		print(" ")
+	}
+}
+
+func isAllElementsNull(l *list.List) bool {
+	for e := l.Front(); e != nil; e = e.Next() {
+		node, ok := e.Value.(*TreeNode)
+		if ok && node != nil {
+			return false
+		}
+	}
+	return true
+
 }
 
