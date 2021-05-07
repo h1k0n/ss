@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"container/list"
 	"fmt"
 	"strconv"
@@ -58,6 +59,8 @@ func main() {
 	root := constructTree(intList)
 	fmt.Println("Hello, playground", inorderTraversal(root))
 	fmt.Println("Hello, playground", levelOrder(root))
+
+	printTreeHorizontal(root)
 }
 
 func constructTree(array []*int) *TreeNode {
@@ -187,5 +190,78 @@ func levelOrder(root *TreeNode) [][]int {
 	}
 	return res
 
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func getTreeDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+
+	return 1 + max(getTreeDepth(root.Left), getTreeDepth(root.Right))
+}
+
+func traversePreOrder(root *TreeNode) string {
+	if root == nil {
+		return ""
+	}
+	var sb bytes.Buffer
+	//StringBuilder sb = new StringBuilder();
+	sb.WriteString(fmt.Sprint(root.Val))
+
+	pointerRight := "└──"
+	var pointerLeft string
+	if root.Right != nil {
+		pointerLeft = "├──"
+	} else {
+		pointerLeft = "└──"
+	}
+
+	traverseNodes(&sb, "", pointerLeft, root.Left, root.Right != nil)
+	traverseNodes(&sb, "", pointerRight, root.Right, false)
+
+	return sb.String()
+}
+
+func traverseNodes(sb *bytes.Buffer, padding string, pointer string, node *TreeNode,
+	hasRightSibling bool) {
+	if node == nil {
+		return
+	}
+
+	sb.WriteString("\n")
+	sb.WriteString(padding)
+	sb.WriteString(pointer)
+	sb.WriteString(fmt.Sprint(node.Val))
+
+	paddingBuilder := bytes.NewBufferString(padding)
+	if hasRightSibling {
+		paddingBuilder.WriteString("│  ")
+	} else {
+		paddingBuilder.WriteString("   ")
+	}
+
+	paddingForBoth := paddingBuilder.String()
+	pointerRight := "└──"
+	// String pointerLeft = (node.right != null) ? "├──" : "└──";
+	var pointerLeft string
+	if node.Right != nil {
+		pointerLeft = "├──"
+	} else {
+		pointerLeft = "└──"
+	}
+
+	traverseNodes(sb, paddingForBoth, pointerLeft, node.Left, node.Right != nil)
+	traverseNodes(sb, paddingForBoth, pointerRight, node.Right, false)
+}
+
+func printTreeHorizontal(root *TreeNode) {
+	print(traversePreOrder(root))
 }
 
