@@ -1,0 +1,1 @@
+sudo qemu-system-aarch64 -boot d     -cpu cortex-a72 -smp 6 -M virt -m 8192 -nographic     -drive if=pflash,format=raw,file=efi.img     -drive if=pflash,format=raw,file=varstore.img         -hda disk.img     -nic tap,mac=02:ca:fe:f0:0d:01,ifname=$tap,script=/home/ha1kang/research/qemu-host/ifup,downscript=/home/ha1kang/research/qemu-host/ifdown
