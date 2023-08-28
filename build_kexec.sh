@@ -1,5 +1,6 @@
 # sed modiy arch/riscv/configs/d1_defconfig CONFIG_INITRAMFS_SOURCE="/tmp/initramfs.linux_riscv64.cpio.xz"
-export CCPREFIX=/home/ha1kang/riscv64-glibc/riscv/bin/riscv64-unknown-linux-gnu-
+#export CCPREFIX=/home/ha1kang/riscv64-glibc/riscv/bin/riscv64-unknown-linux-gnu-   failed to boot: supervisor illegal instruction
+export CCPREFIX=/usr/bin/riscv64-linux-gnu-
 make ARCH=riscv CROSS_COMPILE=$CCPREFIX clean
 make ARCH=riscv CROSS_COMPILE=$CCPREFIX d1_defconfig
 make ARCH=riscv CROSS_COMPILE=$CCPREFIX 
