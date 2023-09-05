@@ -1,0 +1,26 @@
+R-Format
+I-Format
+S-Format
+SB-Format
+U-Format 'Upper Immediate'
+UJ-Format
+
+
+risc-v is little-endian
+
+store in memory in 
+
+PC the program count
+
+li reg imm?
+Turns out that li is not a RISC-V assembly command.
+RISC-V cannot load a 32 bit word in one instruction. Two
+instructions are needed (one for the lower 16 bits of imm, and
+another one for the upper 16 bits.)
+
+
+// https://forums.sifive.com/t/risc-v-assembly-code-without-pseudo-instructions/1418/2
+
+https://www.cs.cornell.edu/courses/cs3410/2019sp/riscv/interpreter/
+https://luplab.gitlab.io/rvcodecjs/
+https://riscv-programming.org/ale/
