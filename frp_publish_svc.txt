@@ -1,0 +1,17 @@
+//client
+[common]
+server_addr = 198.181.47.35
+server_port = 7000
+
+[web]
+type = http
+local_port = 80
+remote_port = 8080
+custom_domains = jns.xn--qg8hjr.ws
+
+
+
+//server
+[common]
+bind_port = 7000
+vhost_http_port = 8080
