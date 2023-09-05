@@ -1,13 +1,13 @@
 //client
 [common]
-server_addr = 198.181.47.35
+server_addr = 198.0.0.35
 server_port = 7000
 
 [web]
 type = http
 local_port = 80
 remote_port = 8080
-custom_domains = jns.xn--qg8hjr.ws
+custom_domains = js.xn--qg8hjr.ws
 
 
 
