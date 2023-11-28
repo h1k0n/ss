@@ -28,6 +28,8 @@ pkgs.mkShell {
     #gtk3
     #wrapGAppsHook
     just
+    # ros2/rosmasterx3
+    ubootTools
   ]);
   shellHook = ''
     export PATH="$PATH:$HOME/.cargo/bin"
