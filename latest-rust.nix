@@ -9,6 +9,7 @@ let
   #rustVersion = "1.62.0";
   rust = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.default.override {
     targets = [ "riscv64imac-unknown-none-elf" ];
+    # arceos使用 targets = [ "riscv64gc-unknown-none-elf" ];
     extensions = [
       "rust-src" # for rust-analyzer
       "llvm-tools-preview"
