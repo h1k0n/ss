@@ -1,6 +1,8 @@
 # 华山派 https://gitee.com/shzhxh/cr1925_scripts CR1825更名为CV1812, CV1811和CV1812只是内存大小不同（1811是1G, 1812是2G）
 # 网卡驱动 https://github.com/orgs/rcore-os/discussions/30
 # 硬件支持 https://github.com/orgs/rcore-os/discussions/24
+# chyyuu 陈渝
+# equation314 Yuekai Jia 贾越凯
 # elliott10 Luoyuan Xiao 萧络元
 # zxgsn 张轩铬
 # yuoo655 CL  陈乐
