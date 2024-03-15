@@ -1,0 +1,8 @@
+1、刷P回滚包，任何版本的氧和氢，刷安卓9即可，链接：
+http://download.h2os.com/OnePlus6/Back/OnePlus6Hydrogen_22_OTA_034_all_1909041314_0edfbb2dfaa34e94.zip
+2、刷氧os 10.01，如果不刷这一步直接刷10.3，会一直提示安装失败：
+https://otafsg1.h2os.com/patch/amazone2/GLO/OnePlus6Oxygen/OnePlus6Oxygen_22.J.41_GLO_041_1911142043/OnePlus6Oxygen_22_OTA_041_all_1911142043_dde113e53cd0f9.zip
+其他版本下载链接：
+3、最新的氧全量包下载：https://oxygenos.oneplus.net/OnePlus6Oxygen_22.J.52_OTA_052_all_2103022341_f3ff04643ea24e51.zip
+
+4、最新的氢全量包下载：http://download.h2os.com/OnePlus6/MP/OnePlus6Hydrogen_22.K.48_OTA_048_all_2010222226_1b45b82013ae43a6.zip
