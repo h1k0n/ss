@@ -1,0 +1,4 @@
+download oem usb driver: https://oneplususbdrivers.com/oneplus-6-usb-driver-download/
+and install with English language
+follow the step to flash custom os: https://wiki.lineageos.org/devices/enchilada/install/
+and: https://wiki.lineageos.org/devices/kebab/install/#ensuring-all-firmware-partitions-are-consistent
